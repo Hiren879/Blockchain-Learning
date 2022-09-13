@@ -79,12 +79,12 @@ Useful for whom?
     2. If many people are doing the transactions you may need to pay higher GAS fees.
 3. Transaction fees = Gas numbers used in a transaction * gas price
 
-![Screenshot 2022-09-08 at 1.52.18 AM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-09-08_at_1.52.18_AM.png)
+    ![Screenshot 2022-09-08 at 1 52 18 AM](https://user-images.githubusercontent.com/2741709/189997760-1deb7a33-656d-40b3-84e7-64d44a4ac469.png)
 
 1. Wei Vs Gwei Vs Ether
     
-    ![Screenshot 2022-09-09 at 5.33.25 PM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-09-09_at_5.33.25_PM.png)
-    
+    ![Screenshot 2022-09-09 at 5 33 25 PM](https://user-images.githubusercontent.com/2741709/189997909-b45d27ca-2a32-48d0-a322-7e79353d5200.png)
+
 
 If you call “mint” with an address that is not the owner of the coin then you will get the following exception.
 
@@ -119,7 +119,8 @@ If you call “mint” with an address that is not the owner of the coin then yo
 
 Starting with an elementary program that sets the “uint” and gets the same value using the get function. If you know any Object Oriented Programming language this would be no rocket science.
 
-![Screenshot 2022-05-21 at 2.29.40 PM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-05-21_at_2.29.40_PM.png)
+![Screenshot 2022-05-21 at 2 29 40 PM](https://user-images.githubusercontent.com/2741709/189998477-285e237b-2de7-45f9-98bd-4be33d99db60.png)
+
 
 **line 4:** same as a Java class
 
@@ -221,7 +222,8 @@ contract DataTypeContract {
 
 There 6 places where you can store the data in EVM:
 
-![Screenshot 2022-09-11 at 8.01.26 PM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-09-11_at_8.01.26_PM.png)
+<img width="1175" alt="Screenshot 2022-09-11 at 8 01 26 PM" src="https://user-images.githubusercontent.com/2741709/189998770-baa01dcf-3319-47cb-84f5-5846043012e6.png">
+
 
 1. Call data & memory: 
     1. Temporary storage variable just to store the value for single instance of the transaction.
@@ -309,7 +311,7 @@ contract Coin {
 
 If you will call “mint” with an address that is not the owner of the coin then you will get the following exception.
 
-![Screenshot 2022-06-04 at 11.43.02 PM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-06-04_at_11.43.02_PM.png)
+![Screenshot 2022-06-04 at 11 43 02 PM](https://user-images.githubusercontent.com/2741709/189999250-d6ea6067-98fb-4038-bbb9-60d20e6d5b2d.png)
 
 I have added a few more such “modifiers” in the above code which will check certain behavior at runtime. This will make our code more flexible, maintainable, and reusable. 
 
@@ -423,7 +425,7 @@ contract SimpleAuction {
 
 ## [msg](http://msg.data) - what-how?
 
-1. [**msg.data**](http://msg.data) ⇒ unlimited size byte array
+1. msg.data ⇒ unlimited size byte array
     1. The function it needs to call
     2. The arguments for that function
 2. **msg.sing** ⇒ only signature of a function that is being called (not the argument)
@@ -433,7 +435,7 @@ contract SimpleAuction {
     2. in that case msg.sender will be the Etherum address of that contract 
 5. **tx.origin** ⇒ it will return the origin of the transaction 
 
-![Screenshot 2022-08-03 at 12.38.39 AM.png](Solidity%2014186d697ac94d0986d6398e16fa940b/Screenshot_2022-08-03_at_12.38.39_AM.png)
+![Screenshot 2022-08-03 at 12 38 39 AM](https://user-images.githubusercontent.com/2741709/189999732-103a5f68-36d3-4701-ae5b-7d88a0ea44e8.png)
 
 ## Block - what-how?
 
