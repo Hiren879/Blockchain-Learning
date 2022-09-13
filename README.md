@@ -650,4 +650,8 @@ contract ExtraStorage is SimpleStorage {
     1. mark it virtual into the parent function
     2. write `override` keyword with function which needs to be overridden
 
+Before we move ahead, let's have a look at few concepts of Chainlink
+
+![carbon (2)](https://user-images.githubusercontent.com/2741709/190002598-edc7ba6f-568f-47f3-b167-ea16a44df49a.png)
+
 To be continued….. 🇮🇳
