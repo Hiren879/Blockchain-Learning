@@ -423,7 +423,7 @@ contract SimpleAuction {
 }
 ```
 
-## [msg](http://msg.data) - what-how?
+## msg - what-how?
 
 1. msg.data ⇒ unlimited size byte array
     1. The function it needs to call
