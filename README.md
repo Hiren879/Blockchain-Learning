@@ -1,7 +1,4 @@
-# Blockchain-Learning
-Learning path of blockchain technology
-
-# Solidity
+# Blockchain-Learning (Solidity)
 
 IDE used → [https://remix.ethereum.org/](https://remix.ethereum.org/)
 
