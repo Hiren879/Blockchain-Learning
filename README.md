@@ -659,8 +659,9 @@ Before we move ahead, let's have a look at few concepts of Chainlink
 
 ## FundMe Contract
 Now we will be creating a FundMe contract which will
-	1. Allow external user to send the funds
-	2. Allow owner of the contract to withdraw the funds
+
+ 1. Allow external user to send the funds
+ 2. Allow owner of the contract to withdraw the funds
 
 ```solidity
 // SPDX-License-Identifier: MIT
