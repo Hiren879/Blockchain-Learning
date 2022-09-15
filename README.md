@@ -36,6 +36,7 @@ Useful for whom?
 ### Documentations & scientific papers
 
 1. [https://github.com/bellaj/Blockchain](https://github.com/bellaj/Blockchain)
+2. Chainlink Docs: https://docs.chain.link/docs/architecture-overview/
 
 ### To create beautiful codeshots
 
