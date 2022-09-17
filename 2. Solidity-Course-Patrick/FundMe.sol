@@ -11,11 +11,17 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract FundMe {
 
     uint256 public minimumUsd = 50 * 1e18; // => 50_000000000000000000
+    address[] public funders;
+    mapping (address => uint256) public addressToAmountFunded;
 
     function fund() public payable {
         // here conversionRate will return USD value with 18 decimal
         // so we have to add 18 decimal into our origina USD
         require(getConversionRate(msg.value) > minimumUsd, "Didn't send enough !!"); // 1e18 = 1 * 10 * 18 = 1 ETH        
+        // msg.value: ETH(Wei) that is sent by the sender
+        // msg.sender: address of the person who called this contract
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender] = msg.value;
     }
 
     /**
@@ -32,6 +38,8 @@ contract FundMe {
 
         // Here we are assumimg that contract at: 0x8A753747A1Fa494EC906cE90E9f37563A8AF630e
         // will be having implemented all the functions which we need
+        // Here is the implementation source code for the same contract address: 
+        // https://rinkeby.etherscan.io/address/0x8A753747A1Fa494EC906cE90E9f37563A8AF630e#code
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         (, int256 price,,,) = priceFeed.latestRoundData(); // int256? because price can be negative also
 
@@ -47,7 +55,7 @@ contract FundMe {
 
     }
 
-    function getConversionRate(uint256 ethAmount) public view return (uint256) {
+    function getConversionRate(uint256 ethAmount) public view returns (uint256) {
         uint256 ethPrice = getPrice(); // this will retrun ETH price in USD in uint256
         // we are removing 18 decimal otherwise we will 36 decimals
         // 1. 18 from ethPrice : 3000_000000000000000000
