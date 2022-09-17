@@ -21,7 +21,6 @@ Useful for whom?
 5. Solidity 0.8: [https://www.youtube.com/watch?v=xv9OmztShIw&list=PLO5VPQH6OWdVQwpQfw9rZ67O6Pjfo6q-p](https://www.youtube.com/watch?v=xv9OmztShIw&list=PLO5VPQH6OWdVQwpQfw9rZ67O6Pjfo6q-p)
 6. Learn solidity by example: [https://www.youtube.com/watch?v=hMwdd664_iw&list=PLO5VPQH6OWdULDcret0S0EYQ7YcKzrigz](https://www.youtube.com/watch?v=hMwdd664_iw&list=PLO5VPQH6OWdULDcret0S0EYQ7YcKzrigz)
 7. Playlists: [https://www.youtube.com/c/EatTheBlocks/playlists](https://www.youtube.com/c/EatTheBlocks/playlists)
-8. Solidty by example: [https://solidity-by-example.org/] (https://solidity-by-example.org/)
 
 ### Optimizing the Smart Contracts
 
@@ -726,4 +725,15 @@ contract FundMe {
 
 }
 ```
+---
+## Library
+
+ - Library are the same as the contracts except
+	
+	 - They can not have state variables
+	 - They can only have internal methods
+	 - They can not send ETH
+
+	  
+
 To be continued….. 🇮🇳
