@@ -732,7 +732,7 @@ contract FundMe {
 ```
 
 ---
-##PriceConvertor.sol library
+## PriceConvertor.sol library
 ```solidity
 // SPDX-License-Identifier: MIT
 
@@ -808,9 +808,9 @@ library PriceConverter {
 payable(msg.sender).transfer(address(this).balance)
 ```
 Let's understand above code
-`msg.sender` -> who ever has called the withdraw function
-`transfer` -> this will initiate the transfer
-`address(this).balance` -> balance of the whole contract which is - address(this)
+    - `msg.sender` -> who ever has called the withdraw function
+    - `transfer` -> this will initiate the transfer
+    - `address(this).balance` -> balance of the whole contract which is - address(this)
 this will use 2300 GAS - if more GAS is used then it will throw an error
  
  2. **send**: no loger recommanded to send ETH
