@@ -29,6 +29,37 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
 
-    
+    function withdraw() public {
+        for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
+        // reset the funders array 
+        funders = new address[](0);
+        // actually withdrawy the funds
+
+        // there are 3 ways to do this
+        // 1. transfer : This method is no longer recommanded to send ETH.
+        // Let's understand what are we doing here.
+        // msg.sender -> who ever has called the withdraw function
+        // transfer -> this will initiate the transfer
+        // address(this).balance -> balance of the whole contract which is - address(this)
+        // this will use 2300 GAS - if more GAS is used then it will throw an error 
+        payable(msg.sender).transfer(address(this).balance)
+
+        // 2. send : This method is no longer recommanded to send ETH.
+        // this is the same as the transfer but it will not fail if required GAS is more
+        // it will return bool on which you can take the decision
+        bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        // sendSuccess must be true else it will throw exception with given error message.
+        require(sendSuccess, "Send failed !!"); // by adding this we are reverting our transaction
+
+        // 3. call
+        // call function takes value 
+        // empty argument is for fallback
+        // curly braces can take GAS & address - currently we are not passing the GAS
+        (callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
+        require(callSuccess, "Send failed !!");
+    }
 
 }

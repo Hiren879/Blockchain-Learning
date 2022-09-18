@@ -734,6 +734,31 @@ contract FundMe {
 	 - They can only have internal methods
 	 - They can not send ETH
 
-	  
+---
+
+## Methods to send ETH to an address
+
+ 1. **transfer**: no loger recommanded to send ETH
+```solidity
+payable(msg.sender).transfer(address(this).balance)
+```
+Let's understand above code
+`msg.sender` -> who ever has called the withdraw function
+`transfer` -> this will initiate the transfer
+`address(this).balance` -> balance of the whole contract which is - address(this)
+this will use 2300 GAS - if more GAS is used then it will throw an error
+ 
+ 2. **send**: no loger recommanded to send ETH
+```solidity
+bool sendSunncess = payable(msg.sender).send(address(this).balance);
+require(sendSunncess, "Send failed !!");
+```
+This is the same as the transfer but it will not fail if required GAS is more. It will return bool on which you can take the decision.
+
+ 3. **call**: Use thid method to send ETH
+```solidity
+bool callSunncess = payable(msg.sender).call{value: address(this).balance}("");
+require(callSunncess, "Call failed !!");
+```
 
 To be continued….. 🇮🇳
