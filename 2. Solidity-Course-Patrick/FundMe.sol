@@ -12,10 +12,15 @@ contract FundMe {
 
     // using the library to call its methods
     using PriceConverter for uint256;
-
     uint256 public minimumUsd = 50 * 1e18; // => 50_000000000000000000
     address[] public funders;
     mapping (address => uint256) public addressToAmountFunded;
+    address public owner;
+
+    constructor() {
+        // set caller of this contract as the owner of this contract
+        this.owner = msg.sender;
+    }
 
     function fund() public payable {
         // here conversionRate will return USD value with 18 decimal
@@ -29,7 +34,7 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
 
-    function withdraw() public {
+    function withdraw() public onlyOwner {
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
@@ -45,7 +50,7 @@ contract FundMe {
         // transfer -> this will initiate the transfer
         // address(this).balance -> balance of the whole contract which is - address(this)
         // this will use 2300 GAS - if more GAS is used then it will throw an error 
-        payable(msg.sender).transfer(address(this).balance)
+        payable(msg.sender).transfer(address(this).balance);
 
         // 2. send : This method is no longer recommanded to send ETH.
         // this is the same as the transfer but it will not fail if required GAS is more
@@ -58,8 +63,15 @@ contract FundMe {
         // call function takes value 
         // empty argument is for fallback
         // curly braces can take GAS & address - currently we are not passing the GAS
-        (callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
+        (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Send failed !!");
+    }
+
+    // Modifier: check condition before executing the code of the method
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Sender is not owner");
+        _; // _ means execute rest of the code after checking above condition.
+        // if you will put _; first then code will get executed first and then condition will be checked.
     }
 
 }
