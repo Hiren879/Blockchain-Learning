@@ -82,4 +82,17 @@ contract FundMe {
         if (msg.sender != i_owner) { revert NotOwner(); }
     }
 
+
+    // If someone calls the contract without calling the fund function then what will happend?
+    // Suppose you got the contract address and from Metamask or from your private wallet you are sending the ETH
+    // Those external calls will be redirected to this receive function.
+    receive() external payable {
+        fund();
+    }
+
+    // when no function matches even the receive()
+    fallback() external payable {
+        fund();
+    }
+
 }

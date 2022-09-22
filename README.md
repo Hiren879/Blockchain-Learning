@@ -832,4 +832,15 @@ require(callSunncess, "Call failed !!");
 2. Use immutable - You can mark something immutable which is being assigned a value only once & then it is not going to change.
 3. Use error rather than using require to revert the contract
 
+## receive() & fallback()
+
+- These are the special methods
+- They do not have `function` keyword
+- They do not have `arguments`
+- They do not have `return` type
+- They must have `external` visibility
+
+1. receive(): This will be called when someone is sending ETH to contract address.
+2. fallback(): This will be called when there is no function match with the contract.
+
 To be continued….. 🇮🇳
