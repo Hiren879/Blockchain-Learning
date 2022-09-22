@@ -826,4 +826,10 @@ bool callSunncess = payable(msg.sender).call{value: address(this).balance}("");
 require(callSunncess, "Call failed !!");
 ```
 
+## How can you save GAS in your contract? (Basics)
+
+1. Use constant - You can mark somthing constant which you are not going to change in your contract.
+2. Use immutable - You can mark something immutable which is being assigned a value only once & then it is not going to change.
+3. Use error rather than using require to revert the contract
+
 To be continued….. 🇮🇳
