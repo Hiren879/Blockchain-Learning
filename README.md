@@ -318,7 +318,7 @@ I have added a few more such “modifiers” in the above code which will check 
 
 ---
 
-### `rgb(9, 105, 218)` View & Pure:
+### View & Pure:
 
 - view:
     - use when you do not want to update the state of the blockchain.
