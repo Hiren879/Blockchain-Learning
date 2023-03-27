@@ -87,7 +87,6 @@ Useful for whom?
     ![Screenshot 2022-09-09 at 5 33 25 PM](https://user-images.githubusercontent.com/2741709/189997909-b45d27ca-2a32-48d0-a322-7e79353d5200.png)
 
 
-If you call “mint” with an address that is not the owner of the coin then you will get the following exception.
 
 ## What is Smart Contract?
 
