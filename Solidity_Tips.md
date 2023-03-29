@@ -4,7 +4,10 @@ This section will highlight best tips found during my learning path.
 
 ## GAS Optimization
 ---
-### Array 
+### **Array**
+--- 
+
+### Tip-1
 
 1. Cache Array `length` while looping over it.
 2. Why? Because Solidity does not store the length of an array as a variable. Instead, it calculates the length of an array each time it is accessed. 
