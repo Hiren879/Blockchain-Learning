@@ -231,7 +231,7 @@ There 6 places where you can store the data in EVM:
     3. Call data Vs memory:
         1. Call data: you can not modify the variable inside the function
         2. memory: you can modify the variable inside the function
-    4. array, struct & mapping:
+    4. array(string), struct & mapping:
         1. we can only declare “memory” for above 3 because they are special data types in solidity. For rest, solidity knows when to declare “memory”.
     
     > *This reminds me the concept of pass-by-value & pass-by-reference in Java.*
