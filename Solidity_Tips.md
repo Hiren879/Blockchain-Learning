@@ -2,6 +2,11 @@
 
 This section will highlight best tips found during my learning path.
 
+## Solidity Cheat-sheet
+---
+
+
+
 ## GAS Optimization
 ---
 ### **Array**
