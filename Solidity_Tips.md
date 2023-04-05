@@ -30,3 +30,8 @@ function myFunction() public {
     }
 }
 ```
+
+---
+### **EVM Data Storage**
+---
+- Use callData/memory variables while emitting events from contract. Storage variables takes more GAS than the callData/memory so avoid it.
