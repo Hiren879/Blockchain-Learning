@@ -22,6 +22,7 @@ Useful for whom?
 6. Learn solidity by example: [https://www.youtube.com/watch?v=hMwdd664_iw&list=PLO5VPQH6OWdULDcret0S0EYQ7YcKzrigz](https://www.youtube.com/watch?v=hMwdd664_iw&list=PLO5VPQH6OWdULDcret0S0EYQ7YcKzrigz)
 7. Playlists: [https://www.youtube.com/c/EatTheBlocks/playlists](https://www.youtube.com/c/EatTheBlocks/playlists)
 8. EVM playgroud: https://www.evm.codes/playground?fork=grayGlacier
+9. Solidty by example: https://solidity-by-example.org/
 
 ### Optimizing the Smart Contracts
 
